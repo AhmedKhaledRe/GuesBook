@@ -1,0 +1,29 @@
+{
+  "name": "guest_book_task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "front-install": "npm install --prefix Front",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "front": "npm start --prefix Front",
+    "dev": "concurrently \"npm run server\" \"npm run front\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix front && npm run build --prefix front"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.3.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.12",
+    "nodemon": "^2.0.14",
+    "path": "^0.12.7",
+    "validator": "^13.6.0"
+  }
+}
