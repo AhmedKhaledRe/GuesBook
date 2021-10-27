@@ -1,4 +1,4 @@
-const Message = require("./models/messege");
+const Message = require("./models/message");
 const User = require("./models/user");
 
 const fakeDbData = require("./data.json");
