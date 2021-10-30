@@ -13,9 +13,8 @@ import LoginInput from "./LoginInput";
 // Styles
 import { useStyles } from "./loginStyles";
 
-const Login = ({ handleSubmit, signIn, history, location, auth, authRequest, cleanErrors }) => {
+const Login = ({ handleSubmit, signIn, history, location, auth, user, authRequest, cleanErrors }) => {
   const classes = useStyles();
-  const user = localStorage.getItem("GuestUser");
 
   useEffect(() => {
     if (location?.state?.successRegister === true) toast.success("Registration Success", { autoClose: 5000 });
@@ -61,6 +60,6 @@ const Login = ({ handleSubmit, signIn, history, location, auth, authRequest, cle
   return <div>{user ? redirect() : renderLogin()}</div>;
 };
 
-const mapStateToProps = ({ auth }) => ({ auth });
+const mapStateToProps = ({ auth }) => ({ user: auth.user, auth });
 
 export default compose(reduxForm({ form: "login", validate }), connect(mapStateToProps, { signIn, authRequest, cleanErrors }))(Login);

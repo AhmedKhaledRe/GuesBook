@@ -7,7 +7,6 @@ import { withRouter } from "react-router";
 
 const AppContainer = ({ auth, user, authRequest, getUser, history }) => {
   useEffect(() => {
-    authRequest();
     getUser();
     //eslint-disable-next-line
   }, []);
