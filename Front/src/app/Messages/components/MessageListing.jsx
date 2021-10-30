@@ -73,13 +73,7 @@ const MessageListing = ({ messages, fetchMessagesReq, user, history, fetchMessag
     //eslint-disable-next-line
   }, [location.pathname]);
 
-  const deleteFunction = (e, message) => {
-    deleteMessageReq(message._id, () => {
-      toast.success("Message Deleted Successfully", 5000);
-      fetchMessagesInit();
-      fetchMessagesReq(isManage);
-    });
-  };
+  const deleteFunction = (e, message) => deleteMessageReq(message._id, () => toast.success("Message Deleted Successfully", 5000));
 
   const renderMessages = () => {
     return (
@@ -108,7 +102,7 @@ const MessageListing = ({ messages, fetchMessagesReq, user, history, fetchMessag
                       size="small"
                       component="span"
                       className={classes.editable}
-                      onClick={() => history.push(`messages/${message._id}/edit`)}
+                      onClick={() => history.push(`/messages/${message._id}/edit`)}
                     >
                       <Edit />
                     </IconButton>

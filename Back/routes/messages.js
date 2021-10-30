@@ -6,8 +6,6 @@ const { normalizeErrors } = require("../helpers/mongoose");
 
 const UserCtrl = require("../controllers/user");
 
-router.get("/secret", UserCtrl.authMiddleware, (req, res) => res.json({ secret: true }));
-
 router.get("/manage", UserCtrl.authMiddleware, (req, res) => {
   const user = res.locals.user;
 
@@ -81,7 +79,10 @@ router.delete("/:id", UserCtrl.authMiddleware, (req, res) => {
 
         User.updateOne({ _id: foundMessage.user.id }, { $pull: { messages: foundMessage._id } }, () => {});
 
-        return res.json({ status: "deleted" });
+        Message.where({ user }).exec((err, foundMessages) => {
+          if (err) return res.status(422).send({ errors: normalizeErrors(err.errors) });
+          return res.json(foundMessages);
+        });
       });
     });
 });
