@@ -17,7 +17,7 @@ export default async function actionCall(options, dispatch, callback, errorHandl
     let errorType = options.error ? options.error : options.success.replace("SUCCESS", "ERROR");
     //     Server Error * Error Type * Redux dispatch * Toast ErrorMSG * Toast WarnMSG
     //           |            |          |                |                 |
-    handleError(err, errorType, dispatch, options.toast, options.warn, "");
+    handleError(err, errorType, dispatch, options.toast, options.warn);
     errorHandling && errorHandling();
   }
 }
