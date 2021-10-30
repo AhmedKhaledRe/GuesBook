@@ -1,5 +1,9 @@
 {
   "name": "guest_book_task",
+  "engines": {
+    "node": "16.4.1",
+    "npm": "7.19.1"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "server.js",

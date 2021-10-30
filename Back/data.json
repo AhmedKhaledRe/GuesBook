@@ -1,19 +1,18 @@
 {
     "messages": [
-        {"description": "Nice."},
-        {"description": "Nice Nice Nice Nice."},
-        {"description": "Nice Nice Nice Nice"},
-        {"description": "Nice Nice Nice Nice"},
-        {"description": "Nice Nice Nice Nice"},
+        {"description": "Hello My dear."},
+        {"description": "Nice to meat you."},
+        {"description": "Congratulation"},
+        {"description": "good to meet you"},
         {"description": "Nice Nice Nice Nice"}
     ],
     "users": [{
-        "username": "Test User",
-        "email": "test@gmail.com",
-        "password": "testtest"
+        "username": "User1",
+        "email": "user1@gmail.com",
+        "password": "123"
     }, {
-        "username": "Test User1",
-        "email": "test1@gmail.com",
-        "password": "testtest1"
+        "username": "User2",
+        "email": "user2@gmail.com",
+        "password": "123"
     }]
 }
