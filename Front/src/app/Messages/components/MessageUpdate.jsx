@@ -14,6 +14,7 @@ import {
 import { Paper, makeStyles, Typography } from "@material-ui/core";
 import { dangerColor } from "../../../common/assets/jss/appStyles";
 import { toast } from "react-toastify";
+import Loading from "../../../common/components/loading";
 
 const useStyles = makeStyles((theme) => ({
   Paper: {
@@ -72,7 +73,7 @@ const MessageUpdate = ({
 
   return (
     <Paper elevation={3} className={classes.Paper}>
-      {!message?.loading ? (
+      {!message?.loading && message.data ? (
         <div>
           <Typography className={classes.UserName} variant="subtitle1">
             {message?.data?.user && message?.data?.user.username}
@@ -90,9 +91,7 @@ const MessageUpdate = ({
           </Typography>
         </div>
       ) : (
-        <Typography variant="h5" align="center">
-          Loading...
-        </Typography>
+        <Loading />
       )}
     </Paper>
   );

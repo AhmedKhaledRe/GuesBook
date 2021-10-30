@@ -79,9 +79,9 @@ router.delete("/:id", UserCtrl.authMiddleware, (req, res) => {
 
         User.updateOne({ _id: foundMessage.user.id }, { $pull: { messages: foundMessage._id } }, () => {});
 
-        Message.where({ user }).exec((err, foundMessages) => {
+        Message.where({ user }).exec((err, Messages) => {
           if (err) return res.status(422).send({ errors: normalizeErrors(err.errors) });
-          return res.json(foundMessages);
+          return res.json(Messages);
         });
       });
     });
