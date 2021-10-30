@@ -26,8 +26,6 @@ const userSchema = new Schema({
   messages: [{ type: Schema.Types.ObjectId, ref: "Message" }],
 });
 
-userSchema.methods.hasSamePassword = (requestedPassword) => bcrypt.compareSync(requestedPassword, this.password);
-
 userSchema.pre("save", (next) => {
   const user = this;
 
