@@ -1,7 +1,5 @@
 # GuestBook
 
-    => live On Heroku 
-
     using MERN Stack ( React / NodeJS / Express / MongoDB)
 
 To Run This Project : 
@@ -20,12 +18,22 @@ About the GuestBook :
 
 - project Divided into two Steps (Client / Server) :
 
-    - client/
+    - Front Folder
+        - contain the demo UI of the project
     
-    - server files in src/ root
+    - Back Folder files in src/ root
         - two roots ( users and messages )
         - two models ( users and messages )
         - controllers folder ( contain routes)
         - helpers folder ( contain mongoosse normalizeErrors)
         - data.json contain test data
         - fake-db.js to load data.json data to mongoDB
+
+    - Server File to manage the front and back .
+
+ToDos :
+    - reStyle the UI of the project.
+    - add profile page to change username and password.
+    - add reset page to reset password.
+    - refactor the styles of messages in external file.
+
