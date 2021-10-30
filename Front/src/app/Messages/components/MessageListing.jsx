@@ -63,7 +63,6 @@ const MessageListing = ({ messages, fetchMessagesReq, user, history, fetchMessag
   const classes = useStyles();
   const isManage = location.pathname.includes("manage");
 
-  console.log({ user });
   useEffect(() => {
     resetMessageErrors();
     fetchMessagesInit();

@@ -1,6 +1,6 @@
 # GuestBook
 
-    => live On Heroku https://stormy-chamber-81080.herokuapp.com/messeges
+    => live On Heroku 
 
     using MERN Stack ( React / NodeJS / Express / MongoDB)
 
@@ -18,34 +18,13 @@ About the GuestBook :
         - Write/Edit/Delete Messages
         - And reply to messages
 
-Home Page :
-
-    ![Screenshot](ScreenShots/Screenshot1.png)
-
-Login Page :
-
-    ![Screenshot](ScreenShots/Screenshot2.png)
-
-Register Page : 
-
-    ![Screenshot](ScreenShots/Screenshot3.png)
-
-Manage Your Messeges Page :
-
-    ![Screenshot](ScreenShots/Screenshot4.png)
-
 - project Divided into two Steps (Client / Server) :
 
     - client/
-
-        - contain ( components folder login / register / messeges ) Designs Folders
-        - styles Folder
-        - actions Folder => that connect Functions FrontEnd To BackEnd APIs
-        - services Folder => that auth user when fetch APIs By check authentication
     
     - server files in src/ root
-        - two roots ( users and messeges )
-        - two models ( users and messeges )
+        - two roots ( users and messages )
+        - two models ( users and messages )
         - controllers folder ( contain routes)
         - helpers folder ( contain mongoosse normalizeErrors)
         - data.json contain test data
