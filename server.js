@@ -19,11 +19,19 @@ mongoose.connect(config.DB_URI, { useNewUrlParser: true, useUnifiedTopology: tru
   // console.log("Database Created!!!");
 });
 
-app.options("*", cors({ origin: "http://localhost:3000", optionsSuccessStatus: 200 }));
-app.use(cors({ origin: "http://localhost:3000", optionsSuccessStatus: 200 }));
+app.use(cors());
 app.use(bodyParser.json());
 app.use("/api/v1/messages", messageRoutes);
 app.use("/api/v1/users", userRoutes);
+
+//serve static assets if in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("Front/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "Front", "build", "index.html"));
+  });
+}
 
 // how to listen and what PORT
 app.listen(PORT, () => console.log("App is running!"));
