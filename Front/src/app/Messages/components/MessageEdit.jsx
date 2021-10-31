@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const MessageEdit = ({ entity, entityField, updateEntity, rows, initialValues, handleSubmit }) => {
+const MessageEdit = ({ entity, entityField, updateEntity, rows, handleSubmit }) => {
   const [state, setState] = useState({ isActive: false, originValue: undefined });
   const classes = useStyles();
 

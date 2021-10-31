@@ -13,9 +13,8 @@ import RegisterInput from "./RegisterInput";
 // Styles
 import { useStyles } from "./registerStyles";
 
-const Register = ({ handleSubmit, register, history, location, auth, authRequest, cleanErrors }) => {
+const Register = ({ handleSubmit, register, history, user, auth, authRequest, cleanErrors }) => {
   const classes = useStyles();
-  const user = localStorage.getItem("GuestUser");
 
   useEffect(() => {
     return () => {
@@ -68,7 +67,7 @@ const Register = ({ handleSubmit, register, history, location, auth, authRequest
   return <div>{user ? redirect() : renderRegister()}</div>;
 };
 
-const mapStateToProps = ({ auth }) => ({ auth });
+const mapStateToProps = ({ auth }) => ({ user: auth.user, auth });
 
 export default compose(
   reduxForm({ form: "register", validate }),
